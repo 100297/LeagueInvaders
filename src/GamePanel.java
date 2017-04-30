@@ -45,10 +45,18 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		manager.update();
+		manager.manageEnemies();
+		if(play.isAlive == false){
+			play.isAlive = true;
+			manager.addObject(play);
+			manager.reset();
+			currentState = END_STATE;
+		
+		}
 	}
 
 	void updateEndState() {
-
+	
 	}
 	
 
@@ -62,6 +70,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 
 	void drawGameState(Graphics g) {
+		manager.checkCollision();
 		play.draw(g);
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, LeagueInvaders.bwidth, LeagueInvaders.bheight);
@@ -77,6 +86,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setFont(titleFont);
 		g.setColor(Color.BLACK);
 		g.drawString("Game Over", 150, 400);
+		g.drawString(""+manager.getScore(), 150, 500);
 	}
 
 	@Override

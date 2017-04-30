@@ -12,6 +12,7 @@ public class Projectile extends GameObject {
 		speed = 10;
 	}
 	Projectile(int x, int y, int width, int height) {
+		super();
 		this.width = width;
 		this.height = height;
 		this.x = x;
@@ -19,6 +20,7 @@ public class Projectile extends GameObject {
 		speed = 10;
 	}
 	void update() {
+		super.update(); 
 		y = y - speed;
 		if(y < 0) {
 			isAlive = false;

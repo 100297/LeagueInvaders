@@ -3,7 +3,7 @@ import java.awt.Graphics;
 
 public class Projectile extends GameObject {
 	int speed;
-	
+	int direction;
 	Projectile() {
 		width = 10;
 		height = 10;
@@ -11,17 +11,27 @@ public class Projectile extends GameObject {
 		y = 700;		
 		speed = 10;
 	}
-	Projectile(int x, int y, int width, int height) {
+	Projectile(int x, int y, int width, int height,int direction) {
 		super();
 		this.width = width;
 		this.height = height;
 		this.x = x;
 		this.y = y;
 		speed = 10;
+		this.direction = direction;
 	}
 	void update() {
 		super.update(); 
-		y = y - speed;
+		
+		if (direction == 1) {
+			y = y - speed;
+		} else if (direction == 2) {
+			y = y - speed;
+			x = x - speed;
+		} else if (direction == 3) {
+			y = y - speed;
+			x = x - speed;
+		}
 		if(y < 0) {
 			isAlive = false;
 		}
@@ -30,7 +40,7 @@ public class Projectile extends GameObject {
 
 	void draw(Graphics g) {
 g.setColor(Color.RED);
-g.fillRect(x, y, width, height);
+g.drawImage(GamePanel.bulletImg, x, y, width, height, null);
 
 	}
 }

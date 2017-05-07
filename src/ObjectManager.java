@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class ObjectManager {
 	ArrayList<GameObject> objects;
-	
+	public static int numbersSpawned = 1;
 	private int score = 0;
 	
 	long enemyTimer = 0;
@@ -45,8 +45,13 @@ public class ObjectManager {
 
 	public void manageEnemies(){
 		if(System.currentTimeMillis() - enemyTimer >= enemySpawnTime){
-			addObject(new Alien(new Random().nextInt(LeagueInvaders.bwidth), 0, 50, 50));
+			
+			for (int i = 0; i < numbersSpawned; i++) {
+				addObject(new Alien(new Random().nextInt(LeagueInvaders.bwidth), 0, 50, 50));
+			}
 			enemyTimer = System.currentTimeMillis();
+		numbersSpawned+=10;
+		 
 		}
 	}
 

@@ -50,7 +50,7 @@ public class ObjectManager {
 				addObject(new Alien(new Random().nextInt(LeagueInvaders.bwidth), 0, 50, 50));
 			}
 			enemyTimer = System.currentTimeMillis();
-		numbersSpawned+=10;
+		numbersSpawned+=1;
 		 
 		}
 	}

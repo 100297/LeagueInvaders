@@ -14,7 +14,7 @@ public class LeagueInvaders {
 		
 		scen = new JFrame();
 		pan = new GamePanel();
-		
+	      
 		setup();
 		
 	}

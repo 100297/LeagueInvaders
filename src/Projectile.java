@@ -15,7 +15,7 @@ public class Projectile extends GameObject {
 		super();
 		this.width = width;
 		this.height = height;
-		this.x = x;
+		this.x = x+5;
 		this.y = y;
 		speed = 10;
 		this.direction = direction;
@@ -27,7 +27,7 @@ public class Projectile extends GameObject {
 			y = y - speed;
 		} else if (direction == 2) {
 			y = y - speed;
-			x = x - speed;
+			x = x + speed;
 		} else if (direction == 3) {
 			y = y - speed;
 			x = x - speed;

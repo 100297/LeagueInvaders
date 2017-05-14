@@ -10,13 +10,12 @@ public class Alien extends GameObject {
 this.y = y;
 this.width = width;
 this.height = height;
-
 }
 void update(){
 	speed = ObjectManager.numbersSpawned;
 	super.update();
 	y+=speed;
-	x += (int)(Math.sin(time++) * 20);
+	
 	System.out.println(x);
 
 }

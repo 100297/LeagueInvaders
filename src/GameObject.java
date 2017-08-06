@@ -7,7 +7,7 @@ public class GameObject {
 	int width;
 	int height;
 	public boolean isAlive = true;
-	Rectangle collisionBox;
+	public Rectangle collisionBox;
 
 	void update() {
 		collisionBox.setBounds(x, y, width, height);
